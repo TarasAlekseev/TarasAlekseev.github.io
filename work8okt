@@ -17,7 +17,7 @@ function er(){
 document.getElementById("inf1").innerHTML ="<p>"+"-1/x^2"+"</p>";
 document.getElementById("inf2").innerHTML ="<p>"+"(a+b)/2"+"</p>";
 document.getElementById("inf3").innerHTML ="<p>"+"(-b+1/a)/(2/c)"+"</p>";
-document.getElementById("inf4").innerHTML ="<p>"+"(2^m)^n"+"</p>";
+document.getElementById("inf4").innerHTML ="<p>"+"2^m^n"+"</p>";
 document.getElementById("inf5").innerHTML ="<p>"+"a/(bc)"+"</p>";
 document.getElementById("inf6").innerHTML ="<p>"+"5.45*(a+2b)/(2-a)"+"</p>";
 document.getElementById("inf7").innerHTML ="<p>"+"1/(1+(a+b)/2)"+"</p>";
