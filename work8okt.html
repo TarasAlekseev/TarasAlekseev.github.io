@@ -1,45 +1,88 @@
+
+<!DOCTYPE html>
+
+
 <html>
-<head>
-<meta http-equiv="Content-Type"
-content="text/html; charset=windows-1251">
-<title>Стили</title>
-<style> p {background-color: #fff;
-        margin: 20px auto;
-        font-family: Arial;
-        font-size: 2em; 
-        text-transform: uppercase;
-        color: rgba(0,168,255,0.5);
-        text-shadow: 8px 8px 0 rgba(255,0,180,0.5);}
-</style>
-<script>
-function er(){
 
-document.getElementById("inf1").innerHTML ="<p>"+"-1/x^2"+"</p>";
-document.getElementById("inf2").innerHTML ="<p>"+"(a+b)/2"+"</p>";
-document.getElementById("inf3").innerHTML ="<p>"+"(-b+1/a)/(2/c)"+"</p>";
-document.getElementById("inf4").innerHTML ="<p>"+"2^m^n"+"</p>";
-document.getElementById("inf5").innerHTML ="<p>"+"a/(bc)"+"</p>";
-document.getElementById("inf6").innerHTML ="<p>"+"5.45*(a+2b)/(2-a)"+"</p>";
-document.getElementById("inf7").innerHTML ="<p>"+"1/(1+(a+b)/2)"+"</p>";
-document.getElementById("inf8").innerHTML ="<p>"+"(a/b)*c"+"</p>";
-document.getElementById("inf9").innerHTML ="<p>"+"(-b+(b^2-4ac)^1/2)/(2a)"+"</p>";
-document.getElementById("inf10").innerHTML ="<p>"+"1/(1+1/(2+1/(2+1/(2+3/5))))"+"</p>";
+  <head>
+
+   <script>
+
+     function er(){
+
+       var i=20
+
+       while (i<36) {
+
+       document.getElementById("inf1").innerHTML = document.getElementById("inf1").innerHTML +i+ "<br>"
+
+       i++;
+
+       }
+     }
+function er1() {
+  var i=10
+  var b = Number(document.getElementById("varb_in").value);
+  while (i<=b) {
+    document.getElementById("inf3").innerHTML = document.getElementById("inf3").innerHTML +i*i+ "<br>"
+    i++;
+    
+  }
 }
-</script>
-</head>
-<body>
-<button onclick="er()">1.15</button>
-<br>
+function er2() {
+  var a = Number(document.getElementById("varb_in").value);
+  while (a<=50) {
+    document.getElementById("inf3").innerHTML = document.getElementById("inf3").innerHTML +a*a*a+ "<br>"
+    a++;
+    
+  }
+}
+function er3() {
+  var a = Number(document.getElementById("varb_in").value);
+  var b = Number(document.getElementById("varb_in").value);
+  while (a<=b) {
+    document.getElementById("inf3").innerHTML = document.getElementById("inf3").innerHTML +a+ "<br>"
+    a++;
+    
+  }
+}
+     
 
-<div id="inf1"></div>
-<div id="inf5"></div>
-<div id="inf8"></div>
-<div id="inf2"></div>
-<div id="inf6"></div>
-<div id="inf9"></div>
-<div id="inf3"></div>
-<div id="inf7"></div>
-<div id="inf10"></div>
-<div id="inf4"></div>
-</body>
+   </script>
+
+  </head>
+
+  <body>
+
+    <button onclick="er()">5.3</button>
+
+    <br>
+
+    <br>
+
+    b=<input type="text" value="16" id="varb_in">
+
+    <br>
+
+    a=<input type="text" value="16" id="vara_in">
+    
+
+    <br>
+
+    
+
+
+
+    <div id="inf1"></div>
+
+    ______________________________________
+
+    <div id="inf2"></div>
+
+    ______________________________________
+
+    <div id="inf3"></div>
+
+  </body>
+
 </html>
