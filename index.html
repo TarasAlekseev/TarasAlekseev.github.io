@@ -1,22 +1,91 @@
-<!DOCTYPE html>
 <html>
 
-  <head>
-<script> 
-function er() {
-  var i=20
-  while (i<36) {
-    document.getElementById("inf1").innerHTML=document.getElementById("inf1").innerHTML+i+"<br>"
-    i++;
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+  <title>Стили</title>
+  <style>
+
+
+  </style>
+  <script>
+  function Clean() {
+
+      document.getElementById("myTable").innerHTML="";
+
+    }
+    var c = 0
+    var temp = ""
+    var temp2 = ""
+    var temp3 = ""
+    flag =0
   
-  }
-}
-</script>
-  </head>
+
+    function CreateRow() {
+      var y = document.createElement("TR");
+      y.setAttribute("id", temp);
+      document.getElementById("myTable").appendChild(y);
+
+    }
+    function CreateRow2() {
+      var y = document.createElement("TR");
+      y.setAttribute("id", temp2);
+      document.getElementById("myTable").appendChild(y);
+
+    }
+       function CreateRow3() {
+      var y = document.createElement("TR");
+      y.setAttribute("id", temp3);
+      document.getElementById("myTable").appendChild(y);
+
+    }
+
+    function CreateTable() {
+      var x = document.createElement("TABLE");
+      x.setAttribute("id", "myTable");
+      document.body.appendChild(x);
+    }
+
+
+    function er() {
+      temp = "Tr1_" + c
+      temp2 = "Tr2_" + c
+      temp3 = "Tr3_" + c
+      c++
+      if (flag ==0){CreateTable()}
+  
+  CreateRow()
+  flag=1
+      var b =25;
+      for (var i = 10; i <= b; i++) {
+        var z1 = document.createElement("TH");
+        var t = document.createTextNode(i);
+        z1.appendChild(t);
+        document.getElementById(temp).appendChild(z1);
+        }
+       
+  CreateRow2()
+       var b =25;
+		for (var i = 10; i <= b; i++) {
+        var z2 = document.createElement("TD");
+        example =i+0.4;
+        var l = document.createTextNode(example);
+        z2.appendChild(l);
+        document.getElementById(temp2).appendChild(z2);
+      
+      }
+    }
+  </script>
+</head>
 
 <body>
-  <button onclick="er()">5.3</button>
+  <button onclick="er()">Нажми на меня</button>
+    <button onclick="Clean()">Стереть таблицу</button>
+  <br>
+  <br> А)
+  <input type="text" value="5" id="in1">
+  <br>
+  <br>
   <div id="inf1"></div>
-  <div id="inf2"></div>
+
+
 </body>
-</html>
