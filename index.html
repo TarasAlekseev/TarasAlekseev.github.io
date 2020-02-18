@@ -1,43 +1,16 @@
-<html>
+  
+<!DOCTYPE html>
 
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
-  <title>Стили</title>
-  <style>
-
-
-  </style>
   <script>
-  function Clean() {
-
-      document.getElementById("myTable").innerHTML="";
-
-    }
     var c = 0
-    var temp = ""
+    var l = 0
+    var m = 1
+    var temp1 = ""
     var temp2 = ""
     var temp3 = ""
-    flag =0
-  
-
-    function CreateRow() {
-      var y = document.createElement("TR");
-      y.setAttribute("id", temp);
-      document.getElementById("myTable").appendChild(y);
-
-    }
-    function CreateRow2() {
-      var y = document.createElement("TR");
-      y.setAttribute("id", temp2);
-      document.getElementById("myTable").appendChild(y);
-
-    }
-       function CreateRow3() {
-      var y = document.createElement("TR");
-      y.setAttribute("id", temp3);
-      document.getElementById("myTable").appendChild(y);
-
-    }
+    sum1 = 0
+    sum2 = 0
+    flag = 0
 
     function CreateTable() {
       var x = document.createElement("TABLE");
@@ -45,47 +18,82 @@
       document.body.appendChild(x);
     }
 
-
-    function er() {
-      temp = "Tr1_" + c
-      temp2 = "Tr2_" + c
-      temp3 = "Tr3_" + c
-      c++
-      if (flag ==0){CreateTable()}
-  
-  CreateRow()
-  flag=1
-      var b =25;
-      for (var i = 10; i <= b; i++) {
-        var z1 = document.createElement("TH");
-        var t = document.createTextNode(i);
-        z1.appendChild(t);
-        document.getElementById(temp).appendChild(z1);
-        }
-       
-  CreateRow2()
-       var b =25;
-		for (var i = 10; i <= b; i++) {
-        var z2 = document.createElement("TD");
-        example =i+0.4;
-        var l = document.createTextNode(example);
-        z2.appendChild(l);
-        document.getElementById(temp2).appendChild(z2);
-      
+    function myFunction() {
+      if (flag == 1) {
+        document.getElementById("myTable").innerHTML = "";
+        document.getElementById("myTableAnswers").innerHTML = "";
       }
+      example1 = 1
+      example2 = 1
+      if (flag == 0) {
+        CreateTable()
+      }
+      flag = 1
+      var b = Number(document.getElementById("in1").value);
+      for (var i = b; i <= 2*b; i++) {
+        temp1 = "Tr" + c
+        var x = document.createElement("TR");
+        x.setAttribute("id", temp1);
+        document.getElementById("myTable").appendChild(x);
+        c++;
+
+        for (var j = 0; j < 1; j++) {
+          var y = document.createElement("TH");
+          y.setAttribute("id", "myTH" + i);
+          t = document.createTextNode(i);
+          y.appendChild(t);
+          document.getElementById(temp1).appendChild(y);
+        }
+        for (j = 0; j < 1; j++) {
+          temp2 = "Td" + l
+          var z = document.createElement("TD");
+          z.setAttribute("id", temp2);
+           sum1 += i*i
+          t = document.createTextNode(sum1);
+          z.appendChild(t);
+         
+          document.getElementById(temp1).appendChild(z);
+          l += 2;
+        }
+        
+      }
+
+      addanswer();
+      document.getElementById("answ1").innerHTML = sum1
+      document.getElementById("answ2").innerHTML = sum2
+      sum1 = 0;
+      sum2 = 0;
+    }
+
+
+    function addanswer() {
+      var x = document.createElement("TABLE");
+      x.setAttribute("id", "myTableAnswers");
+      document.body.appendChild(x);
+      var y = document.createElement("TR");
+      y.setAttribute("id", "tr_answer");
+      document.getElementById("myTableAnswers").appendChild(y);
+      z = document.createElement("TH");
+      z.setAttribute("id", "SUM");
+      document.getElementById("tr_answer").appendChild(z);
+      t = document.createTextNode("SUM");
+      z.appendChild(t);
+      z = document.createElement("TD");
+      z.setAttribute("id", "answ1");
+      document.getElementById("tr_answer").appendChild(z);
+      z = document.createElement("TD");
+      z.setAttribute("id", "answ2");
+      document.getElementById("tr_answer").appendChild(z);
     }
   </script>
 </head>
 
 <body>
-  <button onclick="er()">Нажми на меня</button>
-    <button onclick="Clean()">Стереть таблицу</button>
-  <br>
-  <br> А)
+
   <input type="text" value="5" id="in1">
-  <br>
-  <br>
-  <div id="inf1"></div>
 
-
+  <button onclick="myFunction()">test</button>
 </body>
+
+</html>
+</html>
